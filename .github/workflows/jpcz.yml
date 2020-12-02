@@ -25,6 +25,7 @@ jobs:
         run: |
           cd ~/Scripts
           npm install
+          npm install request
       - name: '运行 【金牌厂长】'
         if: env.JD_COOKIE
         run: |
