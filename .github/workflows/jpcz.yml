@@ -1,10 +1,10 @@
 
-name: 金牌厂长
+name: 芝麻视频
 
 on:
   workflow_dispatch:
   schedule:
-     - cron: '10 * * * *'
+     - cron: '1 * * * *'
   watch:
     types: started
 jobs:
@@ -12,26 +12,28 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event.repository.owner.id == github.event.sender.id
     env:
-        JD_COOKIE: ${{ secrets.JD_COOKIE }}
+        ZM_zhimabody: ${{ secrets.zhimabodyVal }}
+        
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/ziningying/vip.git ~/Scripts
+          git clone https://github.com/ziye66666/JavaScript.git ~/JavaScript
       - name: Use Node.js 12.x
         uses: actions/setup-node@v1
         with:
           node-version: 12.x
       - name: npm install
+        if: env.ZM_zhimabody
         run: |
-          cd ~/Scripts
+          cd ~/JavaScript
           npm install
-          npm install got
-      - name: '运行 【金牌厂长】'
-        if: env.JD_COOKIE
+      - name: '运行 【芝麻视频】'
+        if: env.ZM_zhimabody
         run: |
-          cd ~/Scripts
-          node jx_story.js
+          cd ~/JavaScript
+          node Task/zhima.js
         env:
+          
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
