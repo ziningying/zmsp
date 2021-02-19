@@ -1,5 +1,5 @@
 
-name: 芝麻视频
+name: 芝
 
 on:
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
         run: |
           cd ~/JavaScript
           npm install
-      - name: '运行 【芝麻视频】'
+      - name: '运行 【芝】'
         if: env.ZM_zhimabody
         run: |
           cd ~/JavaScript
