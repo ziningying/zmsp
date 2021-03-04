@@ -22,12 +22,12 @@ jobs:
         with:
           node-version: 12.x
       - name: npm install
-        if: env.ZM_zhimabody
+        if: env.QMYD_qmydTOKEN
         run: |
           cd ~/JavaScript
           npm install
       - name: '运行 【全民悦动】'
-        if: env.ZM_zhimabody
+        if: env.QMYD_qmydTOKEN
         run: |
           cd ~/JavaScript
           node Task/qmyd.js
