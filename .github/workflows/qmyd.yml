@@ -3,7 +3,7 @@ name: 全民悦动
 on:
   workflow_dispatch:
   schedule:
-     - cron: '5,35 0-23 * * *'
+     - cron: '*/25 0-23 * * *'
   watch:
     types: started
 jobs:
